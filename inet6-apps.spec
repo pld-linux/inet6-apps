@@ -159,16 +159,6 @@ cat /etc/passwd | cut -d: -f1 | grep -v ftp >> \
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
-%defattr(644,root,root,755)
-%doc doc/*
-
-%attr(0755,root,root) %{_bindir}/gendata
-%attr(0755,root,root) %{_bindir}/socktest
-
-%config(noreplace) %verify(not size mtime md5) /etc/hosts
-%{_mandir}/man5/*
-
 %files -n ping
 %defattr(644,root,root,755)
 %attr(4711,root,root) /bin/ping
