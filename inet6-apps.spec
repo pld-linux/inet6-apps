@@ -143,7 +143,7 @@ install fingerd/fingerd $RPM_BUILD_ROOT%{_sbindir}/fingerd6
 
 #begin inet6-apps
 
-install ping/ping $RPM_BUILD_ROOT/%{_sbindir}
+install ping/ping $RPM_BUILD_ROOT%{_sbindir}
 install ping/ping.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 install etc/hosts $RPM_BUILD_ROOT%{_sysconfdir}
