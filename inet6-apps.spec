@@ -4,6 +4,7 @@ Name:		inet6-apps
 Version:	0.36
 Release:	5
 License:	BSD & NRL
+Group:		Networking
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
 # Source0-md5:	4805423bddc547ed931203cbc2998e2f
 Patch0:		%{name}-config.patch
@@ -12,9 +13,8 @@ Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-ftp.patch
 Patch4:		%{name}-rfc2292.patch
 Patch5:		%{name}-cpp_macros.patch
-Group:		Networking
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	db3-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a kit of IPv6-aware applications designed to replace many of
@@ -26,7 +26,7 @@ Pakiet ten zawiera podstawowe narzêdzia sieciowe wspieraj±ce nowy
 protokó³ IPv6 i jest zamiennikiem starych aplikacji takich jak
 netkit-base.
 
-%package -n	ftp6
+%package -n ftp6
 Summary:	Standard Unix ftp (file transfer protocol) client
 Summary(pl):	Standardowy klient ftp dla Linuksa
 Group:		Applications/Networking
@@ -43,7 +43,7 @@ protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Klient obecnie ma wspomaganie dla protoko³u IPv6
 
-%package -n	ftpd6
+%package -n ftpd6
 Summary:	Standard Unix ftp (file transfer protocol) server
 Summary(pl):	Standardowy serwer ftp dla Linuksa
 Group:		Networking/Daemons
@@ -60,7 +60,7 @@ protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Serwer obecnie ma wspomaganie dla protoko³u IPv6
 
-%package -n	finger6
+%package -n finger6
 Summary:	IPv6 Finger client
 Summary(pl):	Klient Finger
 Group:		Networking/Utilities
@@ -75,7 +75,7 @@ Finger jest prostym protoko³em który umo¿liwia wyszukiwanie iformacji
 o u¿ytkownikach na innym serwerze, teraz ma ju¿ wspomaganie dla IPv6.
 Pakiet ten zawiera klienta fingera.
 
-%package -n	fingerd6
+%package -n fingerd6
 Summary:	Finger server
 Summary(pl):	Serwer finger
 Group:		Networking/Daemons
@@ -91,7 +91,7 @@ Finger jest prostym protoko³em który umo¿liwia wyszukiwanie iformacji
 o u¿ytkownikach na innym serwerze, teraz ma ju¿ wspomaganie dla IPv6.
 Pakiet ten zawiera serwer fingera.
 
-%package -n	ping
+%package -n ping
 Summary:	ping
 Summary(pl):	ping
 Group:		Networking/Admin
@@ -104,7 +104,7 @@ ping.
 ping.
 
 %prep
-%setup  -q
+%setup -q
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
@@ -113,14 +113,16 @@ ping.
 %patch5 -p1
 
 %build
-%{__make} CC="%{__cc} %{rpmcflags}"
-%{__make} -C ftpd YACC="bison -y"
+%{__make} \
+	CC="%{__cc} %{rpmcflags}"
+
+%{__make} -C ftpd \
+	YACC="bison -y"
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{%{_mandir}/man{8,5},%{_bindir},%{_sbindir}} \
-	$RPM_BUILD_ROOT/{bin,etc/ftpd}
+	$RPM_BUILD_ROOT{/bin,/etc/ftpd}
 
 install ftp/ftp $RPM_BUILD_ROOT%{_bindir}/ftp6
 
