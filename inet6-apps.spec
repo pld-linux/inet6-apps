@@ -10,7 +10,7 @@ Patch1:		%{name}-paths.patch
 Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-ftp.patch
 Group:		Networking
-Group(pl):	Sieci
+Group(pl):	Sieciowe
 Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
@@ -26,7 +26,7 @@ IPv6 i jest zamiennikiem starych aplikacji takich jak netkit-base.
 Summary:	Standard Unix ftp (file transfer protocol) client
 Summary(pl):	Standardowy klient ftp dla Linuxa
 Group:		Networking
-Group(pl):	Sieci
+Group(pl):	Sieciowe
 Requires:	%{name} = %{version}
 
 %description -n ftp6
@@ -45,7 +45,7 @@ Klient obecnie ma wspomaganie dla protoko³u IPv6
 Summary:	Standard Unix ftp (file transfer protocol) server
 Summary(pl):	Standardowy serwer ftp dla Linuxa
 Group:		Networking/Daemons
-Group(pl):	Sieci/Serwery
+Group(pl):	Sieciowe/Serwery
 Requires:	%{name} = %{version}
 
 %description -n ftpd6
@@ -64,7 +64,7 @@ Serwer obecnie ma wspomaganie dla protoko³u IPv6
 Summary:	Finger client
 Summary(pl):	Klient Finger 
 Group:		Networking
-Group(pl):	Sieci
+Group(pl):	Sieciowe
 
 %description -n finger6
 Finger is a simple protocol which allows users to find information about
@@ -80,8 +80,8 @@ Pakiet ten zawiera klienta fingera.
 %package -n	fingerd6
 Summary:	Finger server
 Summary(pl):	Klient i serwer Finger 
-Group:		Networking/Deamons
-Group(pl):	Sieci/Serwery
+Group:		Networking/Daemons
+Group(pl):	Sieciowe/Serwery
 
 %description -n fingerd6
 Finger is a simple protocol which allows users to find information about
