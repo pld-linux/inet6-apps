@@ -1,0 +1,33 @@
+--- inet6-apps-0.36/ping/ping.c~	Wed Nov 28 00:46:44 2001
++++ inet6-apps-0.36/ping/ping.c	Wed Nov 28 00:48:42 2001
+@@ -1014,11 +1014,12 @@
+ 		if (options & F_FLOOD)
+ 			(void)write(STDOUT_FILENO, &BSPACE, 1);
+ 		else {
+-			(void)printf("%d bytes from %s: icmp_seq=%u", cc,
+ #if INET6
++			(void)printf("%d bytes from %s: icmp_seq=%u", cc,
+ 			   name, icmpseq);
+ 			(void)printf(" ttl=%s", ttl);
+ #else /* INET6 */
++			(void)printf("%d bytes from %s: icmp_seq=%u", cc,
+ 			   inet_ntoa(*(struct in_addr *)&from->sin_addr.s_addr),
+ 			   icp->icmp_seq);
+ 			(void)printf(" ttl=%d", ip->ip_ttl);
+@@ -1057,14 +1058,15 @@
+ 		/* We've got something other than an ECHOREPLY */
+ 		if (!(options & F_VERBOSE))
+ 			return;
+-		(void)printf("%d bytes from %s: ", cc,
+ #if INET6
++		(void)printf("%d bytes from %s: ", cc,
+ 		    name);
+ 		if (af == AF_INET)
+ 		  pr_icmph(icp);
+ 		else
+ 		  pr_icmp6h(buf);
+ #else /* INET6 */
++		(void)printf("%d bytes from %s: ", cc,
+ 		    pr_addr(from->sin_addr.s_addr));
+ 		pr_icmph(icp);
+ #endif /* INET6 */

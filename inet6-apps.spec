@@ -2,7 +2,7 @@ Summary:	Inet6 Applications for Linux
 Summary(pl):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 Name:		inet6-apps
 Version:	0.36
-Release:	4
+Release:	5
 License:	BSD & NRL
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
@@ -10,6 +10,7 @@ Patch1:		%{name}-paths.patch
 Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-ftp.patch
 Patch4:		%{name}-rfc2292.patch
+Patch5:		%{name}-cpp_macros.patch
 Group:		Networking
 Group(de):	Netzwerkwesen
 Group(es):	Red
@@ -34,7 +35,6 @@ Summary(pl):	Standardowy klient ftp dla Linuxa
 Group:		Applications/Networking
 Group(de):	Applikationen/Netzwerkwesen
 Group(pl):	Aplikacje/Sieciowe
-Requires:	%{name} = %{version}
 
 %description -n ftp6
 This provides the standard Unix command-line ftp client. Ftp is the
@@ -54,7 +54,6 @@ Summary(pl):	Standardowy serwer ftp dla Linuxa
 Group:		Networking/Daemons
 Group(de):	Netzwerkwesen/Server
 Group(pl):	Sieciowe/Serwery
-Requires:	%{name} = %{version}
 
 %description -n ftpd6
 This provides the standard Unix ftp server. Ftp is the standard
@@ -126,6 +125,7 @@ ping.
 %patch2 -p1
 %patch3 -p1
 %patch4 -p1
+%patch5 -p1
 
 %build
 %{__make} CC="%{__cc} %{rpmcflags}" 
