@@ -1,0 +1,12 @@
+diff -Nur inet6-apps-0.36.orig/ping/ping.c inet6-apps-0.36/ping/ping.c
+--- inet6-apps-0.36.orig/ping/ping.c	Sun Feb 14 09:01:49 1999
++++ inet6-apps-0.36/ping/ping.c	Mon Sep 25 15:19:57 2000
+@@ -434,7 +434,7 @@
+ 		c = "icmp";
+ 		break;
+ 	      case AF_INET6:
+-		c = "icmp6";
++		c = "ipv6-icmp";
+ 		break;
+ 	      default:
+ 		goto loop;
