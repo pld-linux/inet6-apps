@@ -5,6 +5,7 @@ Version:	0.36
 Release:	5
 License:	BSD & NRL
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
+# Source0-md5:	4805423bddc547ed931203cbc2998e2f
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-paths.patch
 Patch2:		%{name}-glibc.patch
