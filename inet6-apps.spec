@@ -41,7 +41,7 @@ individuals.
 Pakiet ten zawiera standardowego klienta ftp. Ftp (file transfer
 protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
-Klient obecnie ma wspomaganie dla protoko³u IPv6
+Klient obecnie ma wsparcie dla protoko³u IPv6.
 
 %package -n ftpd6
 Summary:	Standard Unix ftp (file transfer protocol) server
@@ -55,10 +55,10 @@ extremely popular for both file archives and file transfers between
 individuals.
 
 %description -n ftpd6 -l pl
-Pakiet ten zawiera standardowy server ftp. Ftp (file transfer
+Pakiet ten zawiera standardowy serwer ftp. Ftp (file transfer
 protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
-Serwer obecnie ma wspomaganie dla protoko³u IPv6
+Serwer obecnie ma wsparcie dla protoko³u IPv6.
 
 %package -n finger6
 Summary:	IPv6 Finger client
@@ -71,8 +71,8 @@ about users on other machines, now with IPv6 support. This package
 includes a standard finger client.
 
 %description -n finger6 -l pl
-Finger jest prostym protoko³em który umo¿liwia wyszukiwanie iformacji
-o u¿ytkownikach na innym serwerze, teraz ma ju¿ wspomaganie dla IPv6.
+Finger jest prostym protoko³em który umo¿liwia wyszukiwanie informacji
+o u¿ytkownikach na innym serwerze, teraz ma ju¿ wsparcie dla IPv6.
 Pakiet ten zawiera klienta fingera.
 
 %package -n fingerd6
@@ -87,8 +87,8 @@ includes a standard finger server. The server runs from
 /etc/inetd.conf, which must be modified to disable finger requests.
 
 %description -n fingerd6 -l pl
-Finger jest prostym protoko³em który umo¿liwia wyszukiwanie iformacji
-o u¿ytkownikach na innym serwerze, teraz ma ju¿ wspomaganie dla IPv6.
+Finger jest prostym protoko³em który umo¿liwia wyszukiwanie informacji
+o u¿ytkownikach na innym serwerze, teraz ma ju¿ wsparcie dla IPv6.
 Pakiet ten zawiera serwer fingera.
 
 %package -n ping
