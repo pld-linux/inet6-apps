@@ -11,7 +11,7 @@ Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-ftp.patch
 Group:		Networking
 Group(pl):	Sieciowe
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This is a kit of IPv6-aware applications designed to replace many of the
