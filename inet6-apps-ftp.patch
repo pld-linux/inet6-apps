@@ -1,0 +1,73 @@
+diff -Nur inet6-apps-0.36/ftpd/ftpd.8 inet6-apps-0.36.pld/ftpd/ftpd.8
+--- inet6-apps-0.36/ftpd/ftpd.8	Sat Jun 12 18:09:28 1999
++++ inet6-apps-0.36.pld/ftpd/ftpd.8	Sat Jun 12 18:06:27 1999
+@@ -85,13 +85,13 @@
+ .El
+ .Pp
+ The file
+-.Pa /etc/ftp/nologin
++.Pa /etc/ftpd/nologin
+ can be used to disable ftp access.
+ If the file exists,
+ .Nm
+ displays it and exits.
+ If the file
+-.Pa /etc/ftp/welcome
++.Pa /etc/ftpd/welcome
+ exists,
+ .Nm
+ prints it before issuing the 
+@@ -197,7 +197,7 @@
+ file operations may be performed.
+ .It
+ The login name must not appear in the file
+-.Pa /etc/ftpusers .
++.Pa /etc/ftpd/ftpusers .
+ .It
+ The user must have a standard shell returned by 
+ .Xr getusershell 3 .
+@@ -267,16 +267,16 @@
+ account in this directory.
+ .El
+ .Sh FILES
+-.Bl -tag -width /etc/ftp/welcome -compact
+-.It Pa /etc/ftp/users
++.Bl -tag -width /etc/ftpd/welcome -compact
++.It Pa /etc/ftpd/ftpusers
+ List of unwelcome/restricted users.
+-.It Pa /etc/ftp/welcome
++.It Pa /etc/ftpd/welcome
+ Welcome notice.
+-.It Pa /etc/ftp/motd
++.It Pa /etc/ftpd/motd
+ Welcome notice after login.
+-.It Pa /etc/ftp/motd-6
++.It Pa /etc/ftpd/motd-6
+ Welcome notice after login through IPv6.
+-.It Pa /etc/ftp/nologin
++.It Pa /etc/ftpd/nologin
+ Displayed and access refused.
+ .El
+ .Sh SEE ALSO
+diff -Nur inet6-apps-0.36/ftpd/pathnames.h inet6-apps-0.36.pld/ftpd/pathnames.h
+--- inet6-apps-0.36/ftpd/pathnames.h	Sat Jun 12 18:09:28 1999
++++ inet6-apps-0.36.pld/ftpd/pathnames.h	Sat Jun 12 18:05:12 1999
+@@ -35,13 +35,13 @@
+ 
+ #include <paths.h>
+ 
+-#define	_PATH_FTPUSERS		"/etc/ftp/users"
+-#define	_PATH_FTPWELCOME	"/etc/ftp/welcome"
++#define	_PATH_FTPUSERS		"/etc/ftpd/ftpusers"
++#define	_PATH_FTPWELCOME	"/etc/ftpd/welcome"
+ #ifndef _PATH_NOLOGIN
+-#define	_PATH_NOLOGIN		"/etc/ftp/nologin"
++#define	_PATH_NOLOGIN		"/etc/ftpd/nologin"
+ #endif
+ #if INET6
+-#define	_PATH_FTPLOGINMESG	"/etc/ftp/motd-6"
++#define	_PATH_FTPLOGINMESG	"/etc/ftpd/motd-6"
+ #else /* INET6 */
+-#define	_PATH_FTPLOGINMESG	"/etc/ftp/motd"
++#define	_PATH_FTPLOGINMESG	"/etc/ftpd/motd"
+ #endif /* INET6 */
