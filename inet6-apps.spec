@@ -27,7 +27,7 @@ netkit-base.
 
 %package -n	ftp6
 Summary:	Standard Unix ftp (file transfer protocol) client
-Summary(pl):	Standardowy klient ftp dla Linuxa
+Summary(pl):	Standardowy klient ftp dla Linuksa
 Group:		Applications/Networking
 
 %description -n ftp6
@@ -44,7 +44,7 @@ Klient obecnie ma wspomaganie dla protoko³u IPv6
 
 %package -n	ftpd6
 Summary:	Standard Unix ftp (file transfer protocol) server
-Summary(pl):	Standardowy serwer ftp dla Linuxa
+Summary(pl):	Standardowy serwer ftp dla Linuksa
 Group:		Networking/Daemons
 
 %description -n ftpd6
