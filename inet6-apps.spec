@@ -196,33 +196,3 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n fingerd6
 %attr(755,root,root) %{_sbindir}/fingerd6
-
-%changelog
-* Tue May 25 1999 Artur Frysiak <wiget@pld.org.pl>
-  [0.36-1]
-- separate subpackages for servers
-- separate subpackage for ping
-- removed inetd6 (inetd has IPv6 support)
-- removed tftp (please make another spec)
-- removed /etc/ftp/nologin (ugly file)
-
-* Mon Jan 18 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [0.35-2d]
-- updated to latest version,
-- changed permission of ping to 2711,
-- compressed man pages.
-
-* Fri Aug 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [0.33-3d]
-- translation modified for pl,
-- moved %changelog at the end of spec,
-- changed permissions of all binaries to 711 and 4510 for ping,
-- moved ftpconfig files from /etc to /etc/ftp.
-
-* Sat Jul 11 1998 Marcin Korzonek <mkorz@shadow.eu.org>
-  [0.33-2d]
-- removed ftp client (won't work properly ;(
-
-* Wed Jul 1 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-  [0.33-1d]
-- first try at an RPM.
