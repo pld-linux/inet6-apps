@@ -61,7 +61,7 @@ Serwer obecnie ma wspomaganie dla protoko³u IPv6
 
 %package -n	finger6
 Summary:	IPv6 Finger client
-Summary(pl):	Klient Finger 
+Summary(pl):	Klient Finger
 Group:		Networking/Utilities
 
 %description -n finger6
@@ -76,7 +76,7 @@ Pakiet ten zawiera klienta fingera.
 
 %package -n	fingerd6
 Summary:	Finger server
-Summary(pl):	Serwer finger 
+Summary(pl):	Serwer finger
 Group:		Networking/Daemons
 
 %description -n fingerd6
@@ -112,8 +112,8 @@ ping.
 %patch5 -p1
 
 %build
-%{__make} CC="%{__cc} %{rpmcflags}" 
-%{__make} -C ftpd YACC="bison -y" 
+%{__make} CC="%{__cc} %{rpmcflags}"
+%{__make} -C ftpd YACC="bison -y"
 
 %install
 rm -rf $RPM_BUILD_ROOT
