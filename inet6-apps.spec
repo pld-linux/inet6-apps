@@ -11,7 +11,7 @@ Patch2:      tftpd.patch
 Patch3:	     %{name}-ipv6.patch
 Group:       Networking
 Group(pl):   Sieci
-Buildroot:   /tmp/%{name}-%{version}-root
+BuildRoot:	/tmp/%{name}-%{version}-root
 Summary(pl): Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 
 %description
