@@ -2,11 +2,12 @@ Summary:	Inet6 Applications for Linux
 Summary(pl):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 Name:		inet6-apps
 Version:	0.36
-Release:	1
+Release:	2
 Copyright:	BSD & NRL
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-paths.patch
+Patch2:		%{name}-glibc.patch
 Group:		Networking
 Group(pl):	Sieci
 Buildroot:	/tmp/%{name}-%{version}-root
@@ -108,6 +109,7 @@ ping
 %setup  -q
 %patch0 -p1
 %patch1 -p1
+#%patch2 -p1
 
 %build
 make CC="gcc $RPM_OPT_FLAGS" 
