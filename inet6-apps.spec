@@ -7,7 +7,6 @@ Copyright:	BSD & NRL
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
 Patch1:		%{name}-paths.patch
-Patch2:		%{name}-ipv6.patch
 Group:		Networking
 Group(pl):	Sieci
 Buildroot:	/tmp/%{name}-%{version}-root
@@ -109,7 +108,6 @@ ping
 %setup  -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
 
 %build
 make CC="gcc $RPM_OPT_FLAGS" 
@@ -147,7 +145,7 @@ install ping/ping.8 $RPM_BUILD_ROOT%{_mandir}/man8
 install etc/hosts $RPM_BUILD_ROOT/etc
 install man/hosts.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
-install lib/libinet6.a $RPM_BUILD_ROOT%{_libdir}
+install -s lib/libinet6.a $RPM_BUILD_ROOT%{_libdir}
 install -s misc/{gendata,socktest} $RPM_BUILD_ROOT%{_bindir}
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man?/*
