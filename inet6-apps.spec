@@ -114,8 +114,8 @@ ping
 %patch3 -p1
 
 %build
-make CC="gcc $RPM_OPT_FLAGS" 
-make -C ftpd YACC="bison -y" 
+%{__make} CC="gcc $RPM_OPT_FLAGS" 
+%{__make} -C ftpd YACC="bison -y" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
