@@ -1,6 +1,6 @@
 diff -urN inet6-apps-0.36.orig/GNUmakefile.config inet6-apps-0.36/GNUmakefile.config
---- inet6-apps-0.36.orig/GNUmakefile.config	Sat May 22 19:19:10 1999
-+++ inet6-apps-0.36/GNUmakefile.config	Sat May 22 19:23:54 1999
+--- inet6-apps-0.36.orig/GNUmakefile.config	Fri May 28 23:41:20 1999
++++ inet6-apps-0.36/GNUmakefile.config	Fri May 28 23:41:30 1999
 @@ -94,7 +94,7 @@
  #FASTCTO=0
  
@@ -18,3 +18,15 @@ diff -urN inet6-apps-0.36.orig/GNUmakefile.config inet6-apps-0.36/GNUmakefile.co
 -#DEBUG=0
 +#DEBUG=1
 +DEBUG=0
+diff -urN inet6-apps-0.36.orig/inetd/inetd.c inet6-apps-0.36/inetd/inetd.c
+--- inet6-apps-0.36.orig/inetd/inetd.c	Fri May 28 23:41:20 1999
++++ inet6-apps-0.36/inetd/inetd.c	Fri May 28 23:41:45 1999
+@@ -193,7 +193,7 @@
+ #include <netdb.h>
+ #include <pwd.h>
+ #include <signal.h>
+-#ifdef linux
++#ifndef linux
+ #include <bsd/signal.h>
+ #endif /* linux */
+ #include <stdio.h>
