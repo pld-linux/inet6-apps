@@ -1,18 +1,18 @@
-Summary:     Inet6 Applications for Linux
-Name:        inet6-apps
-Version:     0.36
-Release:     1
-Copyright:   BSD & NRL
-Source:      ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
-Source1:     ftp://ftp.inner.net/pub/ipv6/tftpd-1.2a1.tar.gz
-Patch:       %{name}-config.patch
-Patch1:	     %{name}-paths.patch
-Patch2:      tftpd.patch
-Patch3:	     %{name}-ipv6.patch
-Group:       Networking
-Group(pl):   Sieci
-BuildRoot:	/tmp/%{name}-%{version}-root
-Summary(pl): Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
+Summary:	Inet6 Applications for Linux
+Summary(pl):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
+Name:		inet6-apps
+Version:	0.36
+Release:	1
+Copyright:	BSD & NRL
+Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
+Source1:	ftp://ftp.inner.net/pub/ipv6/tftpd-1.2a1.tar.gz
+Patch0:		%{name}-config.patch
+Patch1:		%{name}-paths.patch
+Patch2:		tftpd.patch
+Patch3:		%{name}-ipv6.patch
+Group:		Networking
+Group(pl):	Sieci
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
 This is a kit of IPv6-aware applications designed to replace many of the
@@ -24,11 +24,11 @@ Pakiet ten zawiera podstawowe narzêdzia sieciowe wspieraj±ce nowy protokó³
 IPv6 i jest zamiennikiem starych aplikacji takich jak netkit-base.
 
 %package -n ftp
-Summary:     Standard Unix ftp (file transfer protocol) client and server
-Group:       Networking
-Group(pl):   Sieci
-Requires:    %{name} = %{version}
-Summary(pl): Standardowy klient i serwer ftp dla Linuxa
+Summary:	Standard Unix ftp (file transfer protocol) client and server
+Summary(pl):	Standardowy klient i serwer ftp dla Linuxa
+Group:		Networking
+Group(pl):	Sieci
+Requires:	%{name} = %{version}
 
 %description -n ftp
 This provides the standard Unix command-line ftp client and server. Ftp 
@@ -43,10 +43,10 @@ np.: ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Klient i serwer obecnie maj± wspomaganie dla protoko³u IPv6
 
 %package -n finger
-Summary:     Finger client and server
-Group:       Networking
-Group(pl):   Sieci
-Summary(pl): Klient i serwer Finger 
+Summary:	Finger client and server
+Summary(pl):	Klient i serwer Finger 
+Group:		Networking
+Group(pl):	Sieci
 
 %description -n finger
 Finger is a simple protocol which allows users to find information about
@@ -60,10 +60,10 @@ o u¿ytkownikach na innym serwerze, teraz ma ju¿ wspomaganie dla IPv6.
 Pakiet ten zawiera klienta i serwer fingera. 
 
 %package -n tftp
-Summary:     Client and daemon for the trivial file transfer protocol (tftp)
-Group:       Networking
-Group(pl):   Sieci
-Summary(pl): Klient i demon tftp (trivial file transfer protocol)
+Summary:	Client and daemon for the trivial file transfer protocol (tftp)
+Summary(pl):	Klient i demon tftp (trivial file transfer protocol)
+Group:		Networking
+Group(pl):	Sieci
 
 %description -n tftp
 The trivial file transfer protocol (tftp) is normally used only for 
@@ -133,33 +133,35 @@ install man/hosts.5 $RPM_BUILD_ROOT%{_mandir}/man5
 install -s inetd/inetd $RPM_BUILD_ROOT%{_sbindir}/inetd6
 
 install lib/libinet6.a $RPM_BUILD_ROOT%{_libdir}
-install -s misc/gendata $RPM_BUILD_ROOT%{_bindir}
-install -s misc/socktest $RPM_BUILD_ROOT%{_bindir}
+install -s misc/{gendata,socktest} $RPM_BUILD_ROOT%{_bindir}
 
 #cat GNUmakefile.inc | sed s:"DOTS=../":"DOTS=/usr/lib/":g > \
 #    $RPM_BUILD_ROOT%{_libdir}/GNUmakefile.inc
 
-bzip2 -9 $RPM_BUILD_ROOT%{_mandir}/{man5/*,man8/*}
+gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man?/*
 
 %post -n ftp
 cat /etc/passwd | sed s/:/" "/g | awk '{ print $1 }' | grep -v ftp >> \
 /etc/ftp/users
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 %defattr(644,root,root,755)
 %doc doc/*
 
-%attr(0711,root,root) %{_bindir}/gendata
-%attr(0711,root,root) %{_bindir}/socktest
-%attr(0711,root,root) %{_sbindir}/inetd6
-%attr(2711,root,icmp) %{_bindir}/ping
+%attr(0755,root,root) %{_bindir}/gendata
+%attr(0755,root,root) %{_bindir}/socktest
+%attr(0755,root,root) %{_sbindir}/inetd6
+%attr(2755,root,icmp) %{_bindir}/ping
 
 %config(noreplace) %verify(not size mtime md5) /etc/hosts
 
 /usr/lib/*
 
-%attr(644,root,man) %{_mandir}/man5/*
-%attr(644,root,man) %{_mandir}/man8/ping*
+%{_mandir}/man5/*
+%{_mandir}/man8/ping*
 
 %files -n ftp
 %defattr(644,root,root,755)
@@ -171,40 +173,37 @@ cat /etc/passwd | sed s/:/" "/g | awk '{ print $1 }' | grep -v ftp >> \
 %attr(644,root,root) %config %verify(not size mtime md5) /etc/ftp/motd-6
 %attr(600,root,root) %config %verify(not size mtime md5) /etc/ftp/users
 
-%attr(711,root,root) %{_bindir}/ftp
-%attr(711,root,root) %{_sbindir}/ftpd6
-%attr(711,root,root) %{_sbindir}/ftpd
-%attr(644,root, man) %{_mandir}/man8/ftpd6.*
+%attr(755,root,root) %{_bindir}/ftp
+%attr(755,root,root) %{_sbindir}/ftpd6
+%attr(755,root,root) %{_sbindir}/ftpd
+%{_mandir}/man8/ftpd6.*
 
 %files -n finger
-%attr(711,root,root) %{_bindir}/finger
-%attr(711,root,root) %{_sbindir}/fingerd
+%attr(755,root,root) %{_bindir}/finger
+%attr(755,root,root) %{_sbindir}/fingerd
 
 %files -n tftp
-%attr(711,root,root) %{_bindir}/tftp
-%attr(711,root,root) %{_sbindir}/tftpd
-
-%clean
-rm -rf $RPM_BUILD_ROOT
+%attr(755,root,root) %{_bindir}/tftp
+%attr(755,root,root) %{_sbindir}/tftpd
 
 %changelog
 * Mon Jan 18 1999 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-[0.35-2d]
+  [0.35-2d]
 - updated to latest version,
 - changed permission of ping to 2711,
 - compressed man pages.
 
 * Fri Aug 14 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-[0.33-3d]
+  [0.33-3d]
 - translation modified for pl,
 - moved %changelog at the end of spec,
 - changed permissions of all binaries to 711 and 4510 for ping,
 - moved ftpconfig files from /etc to /etc/ftp.
 
 * Sat Jul 11 1998 Marcin Korzonek <mkorz@shadow.eu.org>
-[0.33-2d]
+  [0.33-2d]
 - removed ftp client (won't work properly ;(
 
 * Wed Jul 1 1998 Wojtek ¦lusarczyk <wojtek@shadow.eu.org>
-[0.33-1d]
+  [0.33-1d]
 - first try at an RPM.
