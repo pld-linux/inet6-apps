@@ -12,7 +12,9 @@ Patch3:		%{name}-ftp.patch
 Patch4:		%{name}-rfc2292.patch
 Group:		Networking
 Group(de):	Netzwerkwesen
+Group(es):	Red
 Group(pl):	Sieciowe
+Group(pt_BR):	Rede
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	db3-devel
 
@@ -71,7 +73,9 @@ Summary:	IPv6 Finger client
 Summary(pl):	Klient Finger 
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
+Group(es):	Red/Utilitarios
 Group(pl):	Sieciowe/Narzêdzia
+Group(pt_BR):	Rede/Utilitários
 
 %description -n finger6
 Finger is a simple protocol which allows users to find information
@@ -110,10 +114,10 @@ Group(pl):	Sieciowe/Administracyjne
 Obsoletes:	iputils-ping
 
 %description -n ping
-ping
+ping.
 
 %description -n ping -l pl
-ping
+ping.
 
 %prep
 %setup  -q
@@ -159,8 +163,6 @@ install etc/hosts $RPM_BUILD_ROOT%{_sysconfdir}
 install man/hosts.5 $RPM_BUILD_ROOT%{_mandir}/man5
 
 install misc/{gendata,socktest} $RPM_BUILD_ROOT%{_bindir}
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man?/* doc/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
