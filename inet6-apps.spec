@@ -13,7 +13,7 @@ Patch4:		%{name}-rfc2292.patch
 Group:		Networking
 Group(pl):	Sieciowe
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-BuildRequires:	db2-devel
+BuildRequires:	db3-devel
 
 %description
 This is a kit of IPv6-aware applications designed to replace many of the
