@@ -1,0 +1,60 @@
+diff -urN inet6-apps-0.36.orig/ftpd/ftpd.8 inet6-apps-0.36/ftpd/ftpd.8
+--- inet6-apps-0.36.orig/ftpd/ftpd.8	Sat May 22 19:18:02 1999
++++ inet6-apps-0.36/ftpd/ftpd.8	Sat May 22 19:18:07 1999
+@@ -85,13 +85,13 @@
+ .El
+ .Pp
+ The file
+-.Pa /etc/nologin
++.Pa /etc/ftp/nologin
+ can be used to disable ftp access.
+ If the file exists,
+ .Nm
+ displays it and exits.
+ If the file
+-.Pa /etc/ftpwelcome
++.Pa /etc/ftp/welcome
+ exists,
+ .Nm
+ prints it before issuing the 
+@@ -267,14 +267,16 @@
+ account in this directory.
+ .El
+ .Sh FILES
+-.Bl -tag -width /etc/ftpwelcome -compact
+-.It Pa /etc/ftpusers
++.Bl -tag -width /etc/ftp/welcome -compact
++.It Pa /etc/ftp/users
+ List of unwelcome/restricted users.
+-.It Pa /etc/ftpwelcome
++.It Pa /etc/ftp/welcome
+ Welcome notice.
+-.It Pa /etc/motd
++.It Pa /etc/ftp/motd
+ Welcome notice after login.
+-.It Pa /etc/nologin
++.It Pa /etc/ftp/motd-6
++Welcome notice after login through IPv6.
++.It Pa /etc/ftp/nologin
+ Displayed and access refused.
+ .El
+ .Sh SEE ALSO
+diff -urN inet6-apps-0.36.orig/ftpd/pathnames.h inet6-apps-0.36/ftpd/pathnames.h
+--- inet6-apps-0.36.orig/ftpd/pathnames.h	Sat May 22 19:18:02 1999
++++ inet6-apps-0.36/ftpd/pathnames.h	Sat May 22 19:18:11 1999
+@@ -35,10 +35,11 @@
+ 
+ #include <paths.h>
+ 
+-#define	_PATH_FTPUSERS		"/etc/ftpusers"
+-#define	_PATH_FTPWELCOME	"/etc/ftpwelcome"
++#define	_PATH_FTPUSERS		"/etc/ftp/users"
++#define	_PATH_FTPWELCOME	"/etc/ftp/welcome"
++#define	_PATH_NOLOGIN		"/etc/ftp/nologin"
+ #if INET6
+-#define	_PATH_FTPLOGINMESG	"/etc/ftp.motd"
++#define	_PATH_FTPLOGINMESG	"/etc/ftp/motd-6"
+ #else /* INET6 */
+-#define	_PATH_FTPLOGINMESG	"/etc/motd"
++#define	_PATH_FTPLOGINMESG	"/etc/ftp/motd"
+ #endif /* INET6 */

@@ -1,0 +1,31 @@
+diff -urN inet6-apps-0.36.orig/GNUmakefile.config inet6-apps-0.36/GNUmakefile.config
+--- inet6-apps-0.36.orig/GNUmakefile.config	Sat May 22 19:19:10 1999
++++ inet6-apps-0.36/GNUmakefile.config	Sat May 22 19:23:54 1999
+@@ -25,8 +25,8 @@
+ # system's libc instead of those included here, define this. Note that all of
+ # the inet6-apps components are only tested against the included API function
+ # code and may not work if you use those from your system.
+-#LIBCAPI=1
+-LIBCAPI=0
++LIBCAPI=1
++#LIBCAPI=0
+ 
+ # If your system defines the POSIX p1003.1g types (i.e., intnn_t and uintnn_t)
+ # define this. All systems are supposed to be moving in this direction.
+@@ -94,7 +94,7 @@
+ #FASTCTO=0
+ 
+ # Where should the user binaries go?
+-DESTDIR=/usr/inet6
++DESTDIR=/usr
+ 
+ # Put executables into separated directories, or one common bin directory?
+ SEGREGATE_EXECUTABLES=0
+@@ -109,5 +109,5 @@
+ INNER=1
+ 
+ # Enable debugging?
+-DEBUG=1
+-#DEBUG=0
++#DEBUG=1
++DEBUG=0
