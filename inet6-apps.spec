@@ -27,35 +27,35 @@ protokó³ IPv6 i jest zamiennikiem starych aplikacji takich jak
 netkit-base.
 
 %package -n ftp6
-Summary:	Standard Unix ftp (file transfer protocol) client
-Summary(pl):	Standardowy klient ftp dla Linuksa
+Summary:	Standard Unix FTP (file transfer protocol) client
+Summary(pl):	Standardowy klient FTP dla Linuksa
 Group:		Applications/Networking
 
 %description -n ftp6
-This provides the standard Unix command-line ftp client. Ftp is the
+This provides the standard Unix command-line FTP client. FTP is the
 standard Internet file transfer protocol, now with IPv6 support, which
 is extremely popular for both file archives and file transfers between
 individuals.
 
 %description -n ftp6 -l pl
-Pakiet ten zawiera standardowego klienta ftp. Ftp (file transfer
+Pakiet ten zawiera standardowego klienta FTP. FTP (file transfer
 protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Klient obecnie ma wsparcie dla protoko³u IPv6.
 
 %package -n ftpd6
-Summary:	Standard Unix ftp (file transfer protocol) server
-Summary(pl):	Standardowy serwer ftp dla Linuksa
+Summary:	Standard Unix FTP (file transfer protocol) server
+Summary(pl):	Standardowy serwer FTP dla Linuksa
 Group:		Networking/Daemons
 
 %description -n ftpd6
-This provides the standard Unix ftp server. Ftp is the standard
+This provides the standard Unix FTP server. FTP is the standard
 Internet file transfer protocol, now with IPv6 support, which is
 extremely popular for both file archives and file transfers between
 individuals.
 
 %description -n ftpd6 -l pl
-Pakiet ten zawiera standardowy serwer ftp. Ftp (file transfer
+Pakiet ten zawiera standardowy serwer FTP. FTP (file transfer
 protocol) jest bardzo popularny w internecie i daje mo¿liwo¶æ np.:
 ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Serwer obecnie ma wsparcie dla protoko³u IPv6.
