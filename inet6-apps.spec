@@ -2,7 +2,7 @@ Summary:	Inet6 Applications for Linux
 Summary(pl):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 Name:		inet6-apps
 Version:	0.36
-Release:	3
+Release:	4
 Copyright:	BSD & NRL
 Source0:	ftp://ftp.inner.net/pub/ipv6/%{name}-%{version}.tar.gz
 Patch0:		%{name}-config.patch
@@ -27,8 +27,8 @@ IPv6 i jest zamiennikiem starych aplikacji takich jak netkit-base.
 %package -n	ftp6
 Summary:	Standard Unix ftp (file transfer protocol) client
 Summary(pl):	Standardowy klient ftp dla Linuxa
-Group:		Networking
-Group(pl):	Sieciowe
+Group:		Applications/Networking
+Group(pl):	Aplikacje/Sieciowe
 Requires:	%{name} = %{version}
 
 %description -n ftp6
@@ -63,16 +63,15 @@ np.: ¶ci±gania oprogramowania z serwera na którym klient nie ma konta.
 Serwer obecnie ma wspomaganie dla protoko³u IPv6
 
 %package -n	finger6
-Summary:	Finger client
+Summary:	IPv6 Finger client
 Summary(pl):	Klient Finger 
-Group:		Networking
-Group(pl):	Sieciowe
+Group:		Networking/Utilities
+Group(pl):	Sieciowe/Narzêdzia
 
 %description -n finger6
 Finger is a simple protocol which allows users to find information about
 users on other machines, now with IPv6 support. This package includes a 
-standard finger client. The server runs from /etc/inetd.conf, 
-which must be modified to disable finger requests.
+standard finger client.
 
 %description -n finger6 -l pl
 Finger jest prostym protoko³em który umo¿liwia wyszukiwanie iformacji
@@ -99,8 +98,9 @@ Pakiet ten zawiera serwer fingera.
 %package -n	ping
 Summary:	ping
 Summary(pl):	ping
-Group:		Networking
-Group(pl):	Sieciowe
+Group:		Networking/Admin
+Group(pl):	Sieciowe/Administracyjne
+Obsoletes:	iputils-ping
 
 %description -n ping
 ping
@@ -145,7 +145,7 @@ install -s fingerd/fingerd $RPM_BUILD_ROOT%{_sbindir}/fingerd6
 
 #begin inet6-apps
 
-install -s ping/ping $RPM_BUILD_ROOT/bin
+install -s ping/ping $RPM_BUILD_ROOT/%{_sbindir}
 install ping/ping.8 $RPM_BUILD_ROOT%{_mandir}/man8
 
 install etc/hosts $RPM_BUILD_ROOT/etc
@@ -164,7 +164,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n ping
 %defattr(644,root,root,755)
-%attr(4711,root,root) /bin/ping
+%attr(4711,root,root) %{_sbindir}/ping
 %{_mandir}/man8/ping*
 
 %files -n ftpd6
