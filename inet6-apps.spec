@@ -12,10 +12,6 @@ Patch3:		%{name}-ftp.patch
 Patch4:		%{name}-rfc2292.patch
 Patch5:		%{name}-cpp_macros.patch
 Group:		Networking
-Group(de):	Netzwerkwesen
-Group(es):	Red
-Group(pl):	Sieciowe
-Group(pt_BR):	Rede
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	db3-devel
 
@@ -33,8 +29,6 @@ netkit-base.
 Summary:	Standard Unix ftp (file transfer protocol) client
 Summary(pl):	Standardowy klient ftp dla Linuxa
 Group:		Applications/Networking
-Group(de):	Applikationen/Netzwerkwesen
-Group(pl):	Aplikacje/Sieciowe
 
 %description -n ftp6
 This provides the standard Unix command-line ftp client. Ftp is the
@@ -52,8 +46,6 @@ Klient obecnie ma wspomaganie dla protoko³u IPv6
 Summary:	Standard Unix ftp (file transfer protocol) server
 Summary(pl):	Standardowy serwer ftp dla Linuxa
 Group:		Networking/Daemons
-Group(de):	Netzwerkwesen/Server
-Group(pl):	Sieciowe/Serwery
 
 %description -n ftpd6
 This provides the standard Unix ftp server. Ftp is the standard
@@ -71,10 +63,6 @@ Serwer obecnie ma wspomaganie dla protoko³u IPv6
 Summary:	IPv6 Finger client
 Summary(pl):	Klient Finger 
 Group:		Networking/Utilities
-Group(de):	Netzwerkwesen/Werkzeuge
-Group(es):	Red/Utilitarios
-Group(pl):	Sieciowe/Narzêdzia
-Group(pt_BR):	Rede/Utilitários
 
 %description -n finger6
 Finger is a simple protocol which allows users to find information
@@ -90,8 +78,6 @@ Pakiet ten zawiera klienta fingera.
 Summary:	Finger server
 Summary(pl):	Serwer finger 
 Group:		Networking/Daemons
-Group(de):	Netzwerkwesen/Server
-Group(pl):	Sieciowe/Serwery
 
 %description -n fingerd6
 Finger is a simple protocol which allows users to find information
@@ -108,8 +94,6 @@ Pakiet ten zawiera serwer fingera.
 Summary:	ping
 Summary(pl):	ping
 Group:		Networking/Admin
-Group(de):	Netzwerkwesen/Administration
-Group(pl):	Sieciowe/Administracyjne
 Obsoletes:	iputils-ping
 
 %description -n ping
