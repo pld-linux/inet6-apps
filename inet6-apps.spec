@@ -8,6 +8,7 @@ Source1:     ftp://ftp.inner.net/pub/ipv6/tftpd-1.2a1.tar.gz
 Patch:       %{name}-config.patch
 Patch1:	     %{name}-paths.patch
 Patch2:      tftpd.patch
+Patch3:	     %{name}-ipv6.patch
 Group:       Networking
 Group(pl):   Sieci
 Buildroot:   /tmp/%{name}-%{version}-root
@@ -81,6 +82,7 @@ powinien byæ uruchamiany tylko wtedy, kiedy zachodzi taka konieczno¶æ.
 %patch  -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 make CC="gcc $RPM_OPT_FLAGS" 
@@ -148,9 +150,9 @@ cat /etc/passwd | sed s/:/" "/g | awk '{ print $1 }' | grep -v ftp >> \
 %doc doc/*
 
 %attr(0711,root,root) %{_bindir}/gendata
-%attr(0711,root,root) %{_bindir}/usr/bin/socktest
-%attr(0711,root,root) %{_sbindir}/usr/sbin/inetd6
-%attr(2711,root,icmp) %{_bindir}/bin/ping
+%attr(0711,root,root) %{_bindir}/socktest
+%attr(0711,root,root) %{_sbindir}/inetd6
+%attr(2711,root,icmp) %{_bindir}/ping
 
 %config(noreplace) %verify(not size mtime md5) /etc/hosts
 
