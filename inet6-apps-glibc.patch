@@ -1,0 +1,74 @@
+diff -u -r --new-file inet6-apps-0.36/etc/protocols patches/inet6-apps-0.36/etc/protocols
+--- inet6-apps-0.36/etc/protocols	Sat Oct 26 02:00:46 1996
++++ patches/inet6-apps-0.36/etc/protocols	Fri Mar 19 21:03:01 1999
+@@ -21,5 +21,6 @@
+ esp	50	ESP		# IPSEC esp 
+ ah	51	AH		# IPSEC ah
+ icmpv6	58	ICMPV6		# Internet Control Message Protocol version 6
++icmp6	58	ICMPV6		# Internet Control Message Protocol version 6
+ iso-ip	80	ISO-IP		# ISO Internet Protocol
+ encap	98	ENCAP		# RFC1241 encapsulation
+diff -u -r --new-file inet6-apps-0.36/include/bsd/netinet/ipv6.h patches/inet6-apps-0.36/include/bsd/netinet/ipv6.h
+--- inet6-apps-0.36/include/bsd/netinet/ipv6.h	Wed Jun 24 18:45:17 1998
++++ patches/inet6-apps-0.36/include/bsd/netinet/ipv6.h	Fri Mar 19 21:03:01 1999
+@@ -98,7 +98,7 @@
+   struct in6_addr ipv6_dst; /* Destination address. */
+ };
+ 
+-#include <machine/endian.h>
++#include <endian.h>
+ struct ipv6hdr {
+ #if BYTE_ORDER == LITTLE_ENDIAN
+   u_int8_t ipv6_priority:4; /* going away? */
+diff -u -r --new-file inet6-apps-0.36/lib/GNUmakefile patches/inet6-apps-0.36/lib/GNUmakefile
+--- inet6-apps-0.36/lib/GNUmakefile	Fri Oct  9 22:17:20 1998
++++ patches/inet6-apps-0.36/lib/GNUmakefile	Fri Mar 19 21:05:29 1999
+@@ -11,27 +11,27 @@
+ 
+ OBJS=addrcmp.o misc.o connect.o
+ 
+-ifeq ($(LIBCAPI), 0)
+-OBJS+=freeaddrinfo.o inet_ntop.o inet_pton.o getaddrinfo.o gai_strerror.o \
+-      getnameinfo.o in6addr_any.o in6addr_loopback.o __siocgifconf.o \
+-      if_indextoname.o if_nameindex.o if_nametoindex.o
+-
+-ifneq ($(HOSTTABLE), 0)
+-CFLAGS+=-DHOSTTABLE=1
+-endif # HOSTTABLE
+-
+-ifneq ($(RESOLVER), 0)
+-CFLAGS+=-DRESOLVER=1
+-endif # RESOLVER
+-
+-ifeq ($(OS),Linux-libc5)
+-OBJS+=err.o
+-endif # OS = Linux-libc5
+-
+-ifneq ($(LOCAL), 0)
+-CFLAGS+=-DLOCAL=1
+-endif # LOCAL
+-endif # LIBCAPI
++# ifeq ($(LIBCAPI), 0)
++# OBJS+=freeaddrinfo.o inet_ntop.o inet_pton.o getaddrinfo.o gai_strerror.o \
++#       getnameinfo.o in6addr_any.o in6addr_loopback.o __siocgifconf.o \
++#       if_indextoname.o if_nameindex.o if_nametoindex.o
++# 
++# ifneq ($(HOSTTABLE), 0)
++# CFLAGS+=-DHOSTTABLE=1
++# endif # HOSTTABLE
++# 
++# ifneq ($(RESOLVER), 0)
++# CFLAGS+=-DRESOLVER=1
++# endif # RESOLVER
++# 
++# ifeq ($(OS),Linux-libc5)
++# OBJS+=err.o
++# endif # OS = Linux-libc5
++# 
++# ifneq ($(LOCAL), 0)
++# CFLAGS+=-DLOCAL=1
++# endif # LOCAL
++# endif # LIBCAPI
+ 
+ TARGETS=libinet6.a
+ 
