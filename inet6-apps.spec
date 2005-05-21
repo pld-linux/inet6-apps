@@ -13,6 +13,7 @@ Patch2:		%{name}-glibc.patch
 Patch3:		%{name}-ftp.patch
 Patch4:		%{name}-rfc2292.patch
 Patch5:		%{name}-cpp_macros.patch
+BuildRequires:	bison
 BuildRequires:	db3-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
