@@ -168,10 +168,10 @@ cat /etc/passwd | cut -d: -f1 | grep -v ftp >> \
 %defattr(644,root,root,755)
 %dir %{_sysconfdir}/ftpd
 
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ftpd/welcome
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ftpd/motd
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ftpd/motd-6
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/ftpd/ftpusers
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ftpd/welcome
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ftpd/motd
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ftpd/motd-6
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/ftpd/ftpusers
 
 %attr(755,root,root) %{_sbindir}/ftpd6
 
