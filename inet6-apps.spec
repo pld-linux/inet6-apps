@@ -1,5 +1,5 @@
 Summary:	Inet6 Applications for Linux
-Summary(pl):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
+Summary(pl.UTF-8):   Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 Name:		inet6-apps
 Version:	0.36
 Release:	5
@@ -22,14 +22,14 @@ This is a kit of IPv6-aware applications designed to replace many of
 the basic networking programs that come with your system. Most of
 these support IPv4, IPv6, and UNIX domain sockets.
 
-%description -l pl
-Pakiet ten zawiera podstawowe narzÍdzia sieciowe wspieraj±ce nowy
-protokÛ≥ IPv6 i jest zamiennikiem starych aplikacji takich jak
+%description -l pl.UTF-8
+Pakiet ten zawiera podstawowe narzƒôdzia sieciowe wspierajƒÖce nowy
+protok√≥≈Ç IPv6 i jest zamiennikiem starych aplikacji takich jak
 netkit-base.
 
 %package -n ftp6
 Summary:	Standard Unix FTP (file transfer protocol) client
-Summary(pl):	Standardowy klient FTP dla Linuksa
+Summary(pl.UTF-8):   Standardowy klient FTP dla Linuksa
 Group:		Applications/Networking
 
 %description -n ftp6
@@ -38,15 +38,15 @@ standard Internet file transfer protocol, now with IPv6 support, which
 is extremely popular for both file archives and file transfers between
 individuals.
 
-%description -n ftp6 -l pl
+%description -n ftp6 -l pl.UTF-8
 Pakiet ten zawiera standardowego klienta FTP. FTP (file transfer
-protocol) jest bardzo popularny w internecie i daje moøliwo∂Ê np.:
-∂ci±gania oprogramowania z serwera na ktÛrym klient nie ma konta.
-Klient obecnie ma wsparcie dla protoko≥u IPv6.
+protocol) jest bardzo popularny w internecie i daje mo≈ºliwo≈õƒá np.:
+≈õciƒÖgania oprogramowania z serwera na kt√≥rym klient nie ma konta.
+Klient obecnie ma wsparcie dla protoko≈Çu IPv6.
 
 %package -n ftpd6
 Summary:	Standard Unix FTP (file transfer protocol) server
-Summary(pl):	Standardowy serwer FTP dla Linuksa
+Summary(pl.UTF-8):   Standardowy serwer FTP dla Linuksa
 Group:		Networking/Daemons
 
 %description -n ftpd6
@@ -55,15 +55,15 @@ Internet file transfer protocol, now with IPv6 support, which is
 extremely popular for both file archives and file transfers between
 individuals.
 
-%description -n ftpd6 -l pl
+%description -n ftpd6 -l pl.UTF-8
 Pakiet ten zawiera standardowy serwer FTP. FTP (file transfer
-protocol) jest bardzo popularny w internecie i daje moøliwo∂Ê np.:
-∂ci±gania oprogramowania z serwera na ktÛrym klient nie ma konta.
-Serwer obecnie ma wsparcie dla protoko≥u IPv6.
+protocol) jest bardzo popularny w internecie i daje mo≈ºliwo≈õƒá np.:
+≈õciƒÖgania oprogramowania z serwera na kt√≥rym klient nie ma konta.
+Serwer obecnie ma wsparcie dla protoko≈Çu IPv6.
 
 %package -n finger6
 Summary:	IPv6 Finger client
-Summary(pl):	Klient Finger
+Summary(pl.UTF-8):   Klient Finger
 Group:		Networking/Utilities
 
 %description -n finger6
@@ -71,14 +71,14 @@ Finger is a simple protocol which allows users to find information
 about users on other machines, now with IPv6 support. This package
 includes a standard finger client.
 
-%description -n finger6 -l pl
-Finger jest prostym protoko≥em ktÛry umoøliwia wyszukiwanie informacji
-o uøytkownikach na innym serwerze, teraz ma juø wsparcie dla IPv6.
+%description -n finger6 -l pl.UTF-8
+Finger jest prostym protoko≈Çem kt√≥ry umo≈ºliwia wyszukiwanie informacji
+o u≈ºytkownikach na innym serwerze, teraz ma ju≈º wsparcie dla IPv6.
 Pakiet ten zawiera klienta fingera.
 
 %package -n fingerd6
 Summary:	Finger server
-Summary(pl):	Serwer finger
+Summary(pl.UTF-8):   Serwer finger
 Group:		Networking/Daemons
 
 %description -n fingerd6
@@ -87,21 +87,21 @@ about users on other machines, now with IPv6 support. This package
 includes a standard finger server. The server runs from
 /etc/inetd.conf, which must be modified to disable finger requests.
 
-%description -n fingerd6 -l pl
-Finger jest prostym protoko≥em ktÛry umoøliwia wyszukiwanie informacji
-o uøytkownikach na innym serwerze, teraz ma juø wsparcie dla IPv6.
+%description -n fingerd6 -l pl.UTF-8
+Finger jest prostym protoko≈Çem kt√≥ry umo≈ºliwia wyszukiwanie informacji
+o u≈ºytkownikach na innym serwerze, teraz ma ju≈º wsparcie dla IPv6.
 Pakiet ten zawiera serwer fingera.
 
 %package -n ping
 Summary:	ping
-Summary(pl):	ping
+Summary(pl.UTF-8):   ping
 Group:		Networking/Admin
 Obsoletes:	iputils-ping
 
 %description -n ping
 ping.
 
-%description -n ping -l pl
+%description -n ping -l pl.UTF-8
 ping.
 
 %prep
