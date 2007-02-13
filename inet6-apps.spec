@@ -1,5 +1,5 @@
 Summary:	Inet6 Applications for Linux
-Summary(pl.UTF-8):   Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
+Summary(pl.UTF-8):	Podstawowe aplikacje sieciowe ze wspomaganiem dla IPv6
 Name:		inet6-apps
 Version:	0.36
 Release:	5
@@ -29,7 +29,7 @@ netkit-base.
 
 %package -n ftp6
 Summary:	Standard Unix FTP (file transfer protocol) client
-Summary(pl.UTF-8):   Standardowy klient FTP dla Linuksa
+Summary(pl.UTF-8):	Standardowy klient FTP dla Linuksa
 Group:		Applications/Networking
 
 %description -n ftp6
@@ -46,7 +46,7 @@ Klient obecnie ma wsparcie dla protokołu IPv6.
 
 %package -n ftpd6
 Summary:	Standard Unix FTP (file transfer protocol) server
-Summary(pl.UTF-8):   Standardowy serwer FTP dla Linuksa
+Summary(pl.UTF-8):	Standardowy serwer FTP dla Linuksa
 Group:		Networking/Daemons
 
 %description -n ftpd6
@@ -63,7 +63,7 @@ Serwer obecnie ma wsparcie dla protokołu IPv6.
 
 %package -n finger6
 Summary:	IPv6 Finger client
-Summary(pl.UTF-8):   Klient Finger
+Summary(pl.UTF-8):	Klient Finger
 Group:		Networking/Utilities
 
 %description -n finger6
@@ -78,7 +78,7 @@ Pakiet ten zawiera klienta fingera.
 
 %package -n fingerd6
 Summary:	Finger server
-Summary(pl.UTF-8):   Serwer finger
+Summary(pl.UTF-8):	Serwer finger
 Group:		Networking/Daemons
 
 %description -n fingerd6
@@ -94,7 +94,7 @@ Pakiet ten zawiera serwer fingera.
 
 %package -n ping
 Summary:	ping
-Summary(pl.UTF-8):   ping
+Summary(pl.UTF-8):	ping
 Group:		Networking/Admin
 Obsoletes:	iputils-ping
 
